@@ -8,7 +8,9 @@ app.get('/', (req, res)=>{
     var os = getOS(req.header('user-agent'));
     var language = getLanguage(req.header('accept-language'));
     
-    res.end(ip + ' - ' + os + ' - ' + language);
+    var results = {ipaddress: ip, language: language, software: os};
+    
+    res.end(JSON.stringify(results));
     
 }).listen(port);
 
@@ -22,9 +24,12 @@ function getLanguage(acceptLanguage){
 };
 
 function getOS(userAgent){
-    var firstSplit = userAgent.split('(');
-    var secondSplit = firstSplit[1].split(';');
-    var os = secondSplit[0];
-    
-    return os;
+    if(userAgent != null){
+        var osRegExp = /\(([^)]+)\)/;
+        var matches = osRegExp.exec(userAgent);
+        
+        return matches[1];
+    }else{
+        return null;
+    }
 };
