@@ -1,0 +1,25 @@
+{
+  "name": "rhp",
+  "version": "1.0.0",
+  "description": "rhp microservice",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "^0.9.17",
+    "express": "^3.2.6",
+    "async": "^0.2.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lah4life/fcc-rhp-ms.git"
+  },
+  "author": "Dave Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lah4life/fcc-rhp-ms/issues"
+  },
+  "homepage": "https://github.com/lah4life/fcc-rhp-ms#readme"
+}
